@@ -1,0 +1,44 @@
+<div class="hotellist-item">
+    <div class="col-xs-12 col-sm-3 no-padding hotellist-picture">
+        <%= link_to image_tag("hotel/bluesun_s_hotel.jpg", alt: "hotel", class: "img-responsive"), "#" %>
+    </div>
+    <div class="col-xs-12 col-sm-9 no-padding hotellist-content">
+        <div class="row hotellist-info">
+            <div class="col-xs-12 col-sm-8 col-md-9 hotel-name">
+                <h3>
+                    <%= link_to hotel do %>
+                        <%= hotel.name %>
+                        &nbsp;&nbsp;
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                    <% end %>
+                </h3>
+                <p class="">
+                    <%= link_to "#{hotel.city} - Show on map", data: {toggle: "modal", target: "#modalLocation"} do %>
+                        <span class="fa fa-map-marker"></span>
+                        <span class="fa fa-location-arrow"></span> (2.5 km from center)
+                    <% end %>                    
+                </p>
+            </div>
+        </div>
+        <div class="row hotellist-desc">
+            <div class="col-xs-12 col-sm-8 col-md-9 hotellist-desc-l">
+                <p>5 people are looking right now</p>
+                <p><a href="#">Reservation possible without a credit card</a></p>
+                <p class="label-violet">93% of guest reviewers had their expectations of this property met or exceeded</p>
+                <p>Apartment Max people: 2 – Double Room</p>
+                <p class="text-violet">Only 1 room left!</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3 hotellist-price">
+                <h2 class="text-blue text-right price-ht">USD 
+                <span class="text-yellow">
+                    <%= hotel.price_start %> - <%= hotel.price_end %>
+                </span></h2>
+                <%= link_to t(".delete_hotel"), hotel, method: :delete, class: "btn btn-blue btn-select-room" %>
+            </div>
+        </div>
+    </div>
+</div>

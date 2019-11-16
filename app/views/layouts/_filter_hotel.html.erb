@@ -1,0 +1,173 @@
+<div class="col-xs-12 col-sm-3 page-left filter-left-mb__overlay">
+    <div class="filter-head__overlay">
+        <h3><%= t "Filter" %></h3>
+        <span class="fa fa-close filter-head-close__overlay"></span>
+    </div>
+    <div class="filter-left">
+        <div class="filter-head">
+            <h3><%= t "Filter_Results" %> <span class="pull-right reset-filter"><%= t "Reset_Filter" %></span></h3>
+            <p><%= t "Showing_results" %></p>
+        </div>
+        <!-- Budget -->
+        <filter class="box box-filter-budget">
+            <div class="filter-title">
+                <p><b><%= t "Your_Budget" %></b></p>
+            </div>
+            <div class="filter-inner">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label class="text-blue">
+                            <input type="checkbox" name="" value="" />
+                            <span>VND 0 - VND 1,300,000 <%= t "per_night" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label class="text-blue">
+                            <input type="checkbox" name="" value="" />
+                            <span>VND 0 - VND 1,300,000 <%= t "per_night" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label class="text-blue">
+                            <input type="checkbox" name="" value="" />
+                            <span>VND 0 - VND 1,300,000 <%= t "per_night" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label class="text-blue">
+                            <input type="checkbox" name="" value="" />
+                            <span>VND 0 - VND 1,300,000 <%= t "per_night" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label class="text-blue">
+                            <input type="checkbox" name="" value="" />
+                            <span>VND 0 - VND 1,300,000 <%= t "per_night" %></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </filter>
+        <!-- .Budget -->
+        <!-- Star rating -->
+        <filter class="box" id="accordioncollapseRating">
+            <div class="filter-title">
+                <p><%= t "Star_Rating" %><span class="fa fa-angle-down pull-right" role="button" data-toggle="collapse" data-parent="#accordioncollapseRating" href="#collapseRating" aria-expanded="true" aria-controls="collapseRating"></span></p>
+            </div>
+            <div class="filter-inner panel-collapse collapse in" id="collapseRating">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="5star" value="">
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="5star" value="">
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="5star" value="">
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="5star" value="">
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="5star" value="">
+                            <span class="fa fa-star text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                            <span class="fa fa-star-o text-yellow"></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </filter>
+        <!-- .Star rating -->
+        <!-- Facilites -->
+        <filter class="box" id="accordionFacilities">
+            <div class="filter-title">
+                <p class="text-blue"><%= t "Facilities" %> <span class="fa fa-angle-down pull-right" role="button" data-toggle="collapse" data-parent="#accordionFacilities" href="#collapseFacilities" aria-expanded="true" aria-controls="collapseFacilities"></span></p>
+            </div>
+            <div class="filter-inner panel-collapse collapse in" id="collapseFacilities">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "WiFi" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Swimming_Pool" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Parking" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Restaurant" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Elevator" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Fitness_Center" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Meeting_Facilities" %></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item">
+                        <label>
+                            <input type="checkbox" name="" value="" />
+                            <span><%= t "Airport_Transfer" %></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </filter>
+    </div>
+    <!-- .Filter left -->
+</div>

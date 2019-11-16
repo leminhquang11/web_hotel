@@ -1,0 +1,38 @@
+<div class="full-row banner">
+    <!-- Carousel head -->
+    <div id="carousel-banner-picture" class="carousel slide " data-ride="carousel" data-interval="8000">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <%= link_to image_tag("banner.jpg", alt: "Hoi An", class: "img-responsive banner-img"), "#" %>
+                <div class="carousel-caption">
+                    <p class="nation-caption"><span><%= t "Viet_Nam" %></span></p>
+                    <h1 class="location-caption"><%= t "Hoi_An" %></h1>
+                </div>
+            </div>
+            <div class="item">
+                <%= link_to image_tag("banner-2.jpg", alt: "Hoi An", class: "img-responsive banner-img"), "#" %>
+                <div class="carousel-caption">
+                    <p class="nation-caption"><span><%= t "Viet_Nam" %></span></p>
+                    <h1 class="location-caption"><%= t "Ha_Noi" %></h1>
+                </div>
+            </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-banner-picture" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-banner-picture" data-slide-to="1"></li>
+            </ol>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-banner-picture" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-banner-picture" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+    </div>
+    <!-- .Carousel head -->
+</div>
+<!-- .full row-Banner -->

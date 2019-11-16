@@ -1,0 +1,154 @@
+.logo-web {
+  margin-top: 8px;
+}
+#carousel-banner-picture .carousel-control {
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+}
+
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.banner-img {
+	animation: zoominoutsinglefeatured 50s infinite ;
+  display:block;
+  width:100%; height:100%;
+  object-fit: cover;
+}
+
+.package_item_content {
+  margin: 5px;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin: -10px 0 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.black-header {
+  background: rgba(0, 0, 0, 0.95);
+  position: relative;
+  height: 70px;
+}
+
+.form-text {
+  font-family: RobotoCondensedBold, RobotoBold;
+  font-size: 14px;
+  color: #3a64ae;
+}
+
+.navbar-left-item {
+  margin: 0px 3px 0px 3px;
+}
+
+.devine-text {
+  font-family: RobotoCondensedBold, RobotoBold;
+  font-size: 17px;
+}
+
+.login-button {
+  padding: 10px;
+}
+
+.button-signin {
+  width: 100%;
+}
+
+.gray_search_form {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px 0 15px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter-left .list-group-item input {
+  width: auto;
+}
+
+.filter-tab .list-inline p {
+  font-family: Roboto, "open sans",sans-serif, "Helvetica Neue",Helvetica,Arial !important;
+  background: none;
+  font-weight: bold;
+  line-height: 35px;
+  padding: 0 10px;
+}
+
+.edit_button {
+  background-color: #337ab7;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  opacity: 0.9;
+}
+
+#user_remember_me {
+  width: 20px;
+}
+
+.alert {
+  margin: 20px 35% 0 35%;
+  position: absolute;
+  width: 30%;
+  z-index: 1000;
+  text-align: center;
+}

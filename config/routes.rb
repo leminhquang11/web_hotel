@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope "(:locale)", locale: /en|vi/ do
+    root "static_pages#home"
+    devise_for :users
+    resources :users, only: %i(index show destroy)
+    get "admin_hotels", to: "hotels#admin_index"
+    get "admin_hotels/:id", to: "hotels#admin_show"
+    resources :hotels
+  end
 end
