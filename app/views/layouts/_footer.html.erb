@@ -1,0 +1,51 @@
+<footer class="full-row footer">
+    <div class="container footer-content">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <%= link_to image_tag("logo.png", alt: "logo", class: "img-responsive img-logo"), "#" %>
+                <p><i><%= t "about_tripbricks" %></i></p>
+
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h3 class="text-uppercase"><b>Contact Info</b></h3>
+                <p><span class="fa fa-map-marker text-yellow"></span> <%= Settings.address %></p>
+                <p><span class="fa fa-phone text-yellow"></span> <%= Settings.telephone %></p>
+                <p><span class="fa fa-envelope-o text-yellow"></span> <%= Settings.email_tripbricks %></p>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h3 class="text-uppercase"><b><%= t "Discover" %></b></h3>
+                <ul class="list-recent-post">
+                    <li>
+                        <a href="article.html"><%= t "About_Us" %></a>
+                    </li>
+                    <li>
+                        <a href="article.html"><%= t "Terms and conditions" %></a>
+                    </li>
+                    <li>
+                        <a href="article.html"><%= t "Privacy_policy" %></a>
+                    </li>
+                    <li>
+                        <a href="article.html"><%= t "Q&A" %></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h3 class="text-uppercase"><b><%= t "Connect_with_us" %></b></h3>
+                <ul class="list-inline list-connect-us">
+                    <li>
+                      <%= link_to image_tag("icon-footer/fb.png", alt: "facebook", class: "img-responsive"), "https://www.facebook.com/dautotuong" %>
+                    </li>
+                    <li>
+                      <%= link_to image_tag("icon-footer/sp.png", alt: "facebook", class: "img-responsive"), "https://www.facebook.com/dautotuong" %>
+                    </li>
+                    <li>
+                      <%= link_to image_tag("icon-footer/tw.png", alt: "facebook", class: "img-responsive"), "https://www.facebook.com/dautotuong" %>
+                    </li>
+                    <li>
+                      <%= link_to image_tag("icon-footer/yt.png", alt: "facebook", class: "img-responsive"), "https://www.facebook.com/dautotuong" %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,7 @@
+<% provide :title, t("hotels") %>
+<h1><%= t "hotels" %></h1>
+<%= paginate @hotels %>
+<ul class="hotels">
+  <%= render @hotels %>
+</ul>
+<%= paginate @hotels %>

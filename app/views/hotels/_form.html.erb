@@ -1,0 +1,52 @@
+<%= form_for @hotel do |f| %>
+  <%= render "shared/errors_messages", object: f.object %>
+
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :address, t(".address") %>
+  <%= f.text_field :address, class: "form-control" %>
+
+  <%= f.label :phone_number, t(".phone_number") %>
+  <%= f.text_field :phone_number, class: "form-control" %>
+
+  <%= f.label :country, t(".country") %>
+  <%= f.text_field :country, class: "form-control" %>
+
+  <%= f.label :city, t(".city") %>
+  <%= f.text_field :city, class: "form-control" %>
+
+  <%= f.label :state, t(".state") %>
+  <%= f.text_field :state, class: "form-control" %>
+
+  <%= f.label :website, t(".website") %>
+  <%= f.text_field :website, class: "form-control" %>
+
+  <%= f.label :description, t(".description") %>
+  <%= f.text_field :description, class: "form-control" %>
+
+  <%= f.label :luxury, t(".luxury") %>
+  <%= f.number_field :luxury, class: "form-control" %>
+
+  <%= f.label :price_start, t(".price_start") %>
+  <%= f.number_field :price_start, step: :any, class: "form-control" %>
+
+  <%= f.label :price_end, t(".prize_end") %>
+  <%= f.number_field :price_end, step: :any, class: "form-control" %>
+  
+  <div class="form-group" id="file-field">
+    <%= f.label :images, class: "col-md-4 control-label"%>
+    <div class="col-md-4">
+      <table class="user-photo-form">
+        <%= f.fields_for :images do |image| %>
+          <%= render "image_fields", f: image %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association (t ".add_a_photo"), f, :images, class: "btn btn-default" %>
+        </div>
+      </table>
+    </div>
+  </div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

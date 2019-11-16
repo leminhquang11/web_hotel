@@ -1,0 +1,10 @@
+maximum_length_name: 50
+maximum_length_email: 255
+minimum_length_pass: 6
+gravatar_size: 80
+checked: 1
+expired_time: 2
+address: "Dai Hoc Bach Khoa Ha Noi"
+telephone: "012 34 5546"
+email_tripbricks: "info@tripbricks.com"
+max_hotel_per_page: 5

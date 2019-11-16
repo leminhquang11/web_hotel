@@ -1,0 +1,100 @@
+<div class="hotellist-item hotel-detail" id="room-details-info">
+    <div class="hotel-head">
+        <div class="row hotel-name">
+            <div class="col-xs-12 col-sm-9">
+                <h3>
+                    <a href="#">
+                        <%= t "Hotel_name" %>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                        <span class="fa fa-star text-yellow"></span>
+                    </a>
+                </h3>
+                <p class="text-blue">
+                    <span class="fa fa-map-marker text-yellow"></span> <%= t "Hotel_Address" %>
+                    <a href="#" class="text-violet" data-toggle="modal" data-target="#modalLocation"> <%= t "showmap" %></a>
+                </p>
+            </div>
+        </div>
+        <!-- .hotel-name -->
+        <div class="hotel-slider">
+            <div class="row gallery-photos clearfix">
+                <div class="col-xs-12 col-sm-8 hotel-slider">
+                    <div class="row">
+                        <div class="col-sm-12" id="carousel-hotel-box">
+                            <div class="carousel slide" id="hotelCarousel">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="active item" data-slide-number="0">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                    <div class="item" data-slide-number="1">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                    <div class="item" data-slide-number="2">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                    <div class="item" data-slide-number="3">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                    <div class="item" data-slide-number="4">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                    <div class="item" data-slide-number="5">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                    <div class="item" data-slide-number="6">
+                                        <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#" %></div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="left carousel-control" href="#hotelCarousel" role="button" data-slide="prev">
+                                    <span class="fa fa-angle-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#hotelCarousel" role="button" data-slide="next">
+                                    <span class="fa fa-angle-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="hotel-slider-thumbs" class="col-xs-12 col-sm-4">
+                    <ul class="col-xs-12 no-padding hide-bullets">
+                        <li class="col-sm-3 active" data-item-number="0">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-0" %>
+                        </li>
+                        <li class="col-sm-3" data-item-number="1">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-1" %>
+                        </li>
+                        <li class="col-sm-3" data-item-number="2">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-2" %>
+                        </li>
+                        <li class="col-sm-3" data-item-number="3">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-3" %>
+                        </li>
+                        <li class="col-sm-3" data-item-number="4">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-4" %>
+                        </li>
+                        <li class="col-sm-3" data-item-number="5">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-5" %>
+                        </li>
+                        <li class="col-sm-3" data-item-number="6">
+                            <%= link_to image_tag("hotel/emm-hotel.jpg", alt: "Hotel"), "#", class: "thumbnail", id: "carousel-hotel-6" %>
+                        </li>
+                    </ul>
+                    <div class="col-xs-12 no-padding hotellist-price">
+                        <p class="text-left text-blue"><%= t "Hotel_descrition" %></p>
+                        <h2 class="text-left text-blue price-ht">USD <span class="text-yellow"><%= t "Price" %></span></h2>
+                        <a href="#" class="btn btn-yellow btn-select-room"><%= t "Book_now" %></a>
+                    </div>
+                    <div class="col-xs-12 no-padding hotel-slide-pay">
+                        <p class="text-blue"><%= t "cards_accepted" %></p>
+                        <ul class="list-inline">
+                            <li><%= link_to image_tag("pay1.png", class: "img-responsive"), "#" %></li>
+                            <li><%= link_to image_tag("pay2.png", class: "img-responsive"), "#" %></li>
+                            <li><%= link_to image_tag("pay3.png", class: "img-responsive"), "#" %></li>
+                            <li><%= link_to image_tag("pay4.png", class: "img-responsive"), "#" %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .hotel-slider -->
+    </div>
+    <!-- .hotel-head -->
+</div>

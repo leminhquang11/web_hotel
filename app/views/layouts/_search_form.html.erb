@@ -1,0 +1,34 @@
+<div class="full-row form_tour_search">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <form id="tour_search_form" name="tour_search_form" method="get" action="">
+            <div class="tour_search_wrapper">
+                <div class="col-xs-12 col-sm-3 one_fourth">
+                    <label for="keyword"><%= t "Destination" %></label>
+                    <input id="keyword" class="form-control" name="keyword" type="text" placeholder="City, region or keywords">
+                </div>
+                <div class="col-xs-12 col-sm-3 one_fourth">
+                    <label for="col-xs-12 start_date"><%= t "Date" %></label>
+                    <div class="row">
+                        <div class="col-xs-6 start_date_input">
+                            <input id="start_date" name="start_date" type="text" placeholder="From" class="form-control hasDatepicker">
+                            <input id="start_date_raw" name="start_date_raw" type="hidden">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <div class="col-xs-6 end_date_input">
+                            <input id="end_date" name="end_date" type="text" placeholder="To" class="form-control hasDatepicker">
+                            <input id="end_date_raw" name="end_date_raw" type="hidden">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3 one_fourth">
+                    <label for="guests"><%= t "Guests" %></label>
+                    <input id="guests" class="form-control" name="guests" type="text" placeholder="0 - Adults">
+                </div>
+                <div class="col-xs-12 col-sm-3 one_fourth last">
+                    <input id="tour_search_btn" class="btn btn-blue" type="submit" value="Search">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

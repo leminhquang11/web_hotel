@@ -1,33 +1,96 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  hello: "Hello"
+  title: "Ruby on Rails Tutorial"
+  welcome: "Welcome to the Sample App"
+  sampleapp: "sample application."
+  thisishomepage: "This is the home page for the"
+  signupnow: "Sign up now!"
+  home: "Home"
+  help: "Help"
+  login: "Log in"
+  about: "About"
+  contact: "Contact"
+  news: "News"
+  ruby_on_Rails_Tutorial: "Ruby on Rails Tutorial"
+  michael_Hartl: "Michael Hartl"
+  the: "The"
+  by: "by"
+  welcome: "Welcome to the Sample App!"
+  confirmation: "Confirmation"
+  name: "Name"
+  email: "Email"
+  password: "Password"
+  create_account: "Create my account!"
+  sign_up: "Sign up!"
+  user_not_found: "User not found!"
+  error: "Error"
+  log_in: "Log in"
+  sign_up_now: "Sign up now!"
+  new_user: "New user?"
+  sign_in_errors: "Invalid email/password combination"
+  user: "User"
+  account: "Account"
+  profile: "Profile"
+  settings: "Settings"
+  logout: "Log out"
+  remember_me: "Remember me"
+  remember_me_on_this_computer: "Remember me on this computer"
+  edit_user: "Edit user"
+  update_profile: "Update your profile!"
+  save_change: "Save change"
+  change: "Change"
+  updated: "Profile updated!"
+  please_login: "Please login first!"
+  users: "All users"
+  delete: "Delete"
+  confirm: "Are you sure?"
+  delete_user: "User deleted!"
+  form_contains: "The form contains"
+  account_activation: "Account activation"
+  account_activation_email: "Welcome to the Sample App! Click on the link below to activate your account:"
+  check_email_notice: "Please check your email to activate your account."
+  activated: "Account activated!"
+  invalid_activation_link: "Invalid activation link"
+  forgot_password: "Forgot your password ?"
+  submit: "Submit"
+  email_reset_sent: "Email sent with password reset instructions"
+  email_not_found: "Email not found"
+  reset_pass: "Reset password"
+  to_reset_your_password: "To reset your password click the link below:"
+  link_will_expire_in_two_hours: "This link will expire in two hours."
+  password_reset_remind: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+  cannot_empty: "can't be empty"
+  password_reset_success: "Password has been reset."
+  password_reset_expired: "Password reset has expired."
+  user_deleted_failed: "Failed to delete user"
+  not_admin: "You are not admin!!"
+  not_current_user: "You are not current user!!"
+  user_not_found: "User not found !"
+  activate: "Activate"
+  fill_full_info: "Fill out the information to create a new account!"
+  or_login: "Or log in with"
+  about_tripbricks: "Based in Hanoi, we are creating a system that allows all online users plan, book and administer their own dynamically packaged holidays in Vietnam and Southeast Asia."
+  vietnam_unique_chapter: "The world is like a book and Vietnam is an unique chapter."
+  lets_begin: "Let's begin your vacations by enjoying our suggested Packages or create your own dynamically adventures with us."
+  fill_to_update: "Fill out the information to update your profile!"
+  showmap: " - Great location - Show map"
+  cards_accepted: "Cards accepted at this property"
+  somethings_went_wrong: "Somethings went wrong"
+  per_night: "per night"
+  fill_full_info_update: "Fill out the information to update your profile"
+  password_confirmation: "Password confirmation"
+  current_password: "Current password"
+  currently_waiting_confirmation: "Currently waiting confirmation for: "
+  leave_blank: "(leave blank if you don't want to change it)"
+  need_current_password: "(we need your current password to confirm your changes)"
+  delete_account: "Delete account!"
+  resend_confirmation: "Resend confirmation"
+  send_reset_password: "Send reset password instructions"
+  resend_unlock: "Resend unlock instructions"
+  email_confirm: "You can confirm your account email through the link below:"
+  being_changed: "We're contacting you to notify you that your email is being changed to"
+  has_changed: "We're contacting you to notify you that your email has been changed to"
+  notify_password_change: "We're contacting you to notify you that your password has been changed."
+  confirm_my_account: "Confirm my account"
+  forget_pass: "Forget your password?"
+  didnt_receive_mail: "Didn't receive confirmation instructions?"
