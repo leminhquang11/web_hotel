@@ -33,11 +33,11 @@ gem "sass-rails", "~> 5.0"
 gem "sassc-rails", ">= 2.1.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem "sqlite3"
+
 
 group :development, :test do
   gem "byebug", "9.0.6", platforms: [:mri, :mingw, :x64_mingw]
-  gem "mysql2", "~> 0.5.2"
+  gem "sqlite3"
 end
 
 group :development do
