@@ -7,4 +7,9 @@ Rails.application.routes.draw do
     get "admin_hotels/:id", to: "hotels#admin_show"
     resources :hotels
   end
+  get "about_us", to: "static_pages#about_us"
+  get "term_condition", to: "static_pages#term_condition"
+  get "privacy_policy", to: "static_pages#privacy_policy"
+  get "room", to: "static_pages#room"
+  
 end
