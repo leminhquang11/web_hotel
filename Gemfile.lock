@@ -69,9 +69,9 @@ GEM
     bootstrap-glyphicons (0.0.1)
       railties (>= 3.0)
       sass (>= 3.2)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     bootstrap-will_paginate (1.0.0)
       will_paginate
     builder (3.2.3)
@@ -138,7 +138,7 @@ GEM
       dry-logic (~> 1.0, >= 1.0.2)
     erubi (1.9.0)
     execjs (2.7.0)
-    ffi (1.11.1)
+    ffi (1.11.2)
     figaro (1.1.1)
       thor (~> 0.14)
     font-awesome-sass (5.11.2)
@@ -339,7 +339,7 @@ DEPENDENCIES
   bcrypt (= 3.1.12)
   bootsnap (>= 1.1.0)
   bootstrap-glyphicons
-  bootstrap-sass (= 3.3.7)
+  bootstrap-sass (= 3.4.1)
   bootstrap-will_paginate (= 1.0.0)
   byebug (= 9.0.6)
   cancancan
