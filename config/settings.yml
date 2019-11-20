@@ -8,3 +8,5 @@ address: "Dai Hoc Bach Khoa Ha Noi"
 telephone: "012 34 5546"
 email_tripbricks: "info@tripbricks.com"
 max_hotel_per_page: 5
+max_image_per_page: 5
+max_room_per_page: 5
