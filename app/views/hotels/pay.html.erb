@@ -4,8 +4,8 @@
             <div class="heading">
                 <h1>Confirm Purchase</h1>
             </div>
-            <div class="payment">
-                <form>
+            <div class="col-xs-5">
+                <form action="/">
                     <div class="form-group owner">
                         <label for="owner">Owner</label>
                         <input type="text" class="form-control" id="owner">
@@ -53,12 +53,16 @@
                         </ul>
                     </div>
                     <div class="form-group" id="pay-now">
-                        <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                        <button type="submit" class="btn btn-yellow btn-select-room" id="confirm-purchase" onclick="myFunction()">Thanh toán</button>
                     </div>
                 </form>
             </div>
         </div>
-
+        <script>
+            function myFunction() {
+              alert("cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!");
+            }
+        </script>
         <p class="examples-note">Here are some dummy credit card numbers and CVV codes so you can test out the form:</p>
 
         <div class="examples">
