@@ -10,6 +10,7 @@ class CreateHotels < ActiveRecord::Migration[5.2]
       t.string :website
       t.decimal :price_start, precision: 8, scale: 2
       t.decimal :price_end, precision: 8, scale: 2
+      # loai khach san
       t.integer :luxury
       t.string :description
       t.decimal :rate_point, precision: 3, scale: 1
