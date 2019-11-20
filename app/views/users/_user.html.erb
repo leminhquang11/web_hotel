@@ -1,8 +1,10 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <% if current_user.has_role?(:admin) %>
-    | <%= link_to t("delete"), user, method: :delete,
-                                  data: {confirm: t("confirm")} %>
-  <% end %>
-</li>
+<div class="col-xs-12 col-sm-3 " style="padding-bottom: 30px;">
+	<li>
+	  <%= gravatar_for user, size: 50 %>
+	  <%= link_to user.name, user %>
+	  <% if current_user.has_role?(:admin) %>
+	    | <%= link_to t("delete"), user, method: :delete,
+	                                  data: {confirm: t("confirm")} %>
+	  <% end %>
+	</li>
+</div>

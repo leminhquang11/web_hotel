@@ -1,7 +1,8 @@
-<% provide :title, t("users") %>
-<h1><%= t "users" %></h1>
-<%= paginate @users %>
-<ul class="users">
-  <%= render @users %>
-</ul>
-<%= paginate @users %>
+<div class="container" style="padding: 20px 0 0 0">
+	<% provide :title, t("users") %>
+	<h1><%= t "users" %></h1>
+		<ul class="users" >
+		  <%= render @users %>
+		</ul>
+	
+</div>

@@ -1,7 +1,9 @@
-<% provide :title, t("hotels") %>
-<h1><%= t "hotels" %></h1>
-<%= paginate @hotels %>
-<ul class="hotels">
-  <%= render @hotels %>
-</ul>
-<%= paginate @hotels %>
+<div class="container" style="padding: 20px 0 0 0">
+	<% provide :title, t("hotels") %>
+	<h1><%= t "hotels" %></h1>
+	<%= paginate @hotels %>
+	<ul class="hotels">
+	  <%= render @hotels %>
+	</ul>
+	<%= paginate @hotels %>
+</div>
