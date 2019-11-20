@@ -70,7 +70,6 @@ class HotelsController < ApplicationController
       :luxury, :description,
       images_attributes: [:id, :image, :_destroy])
   end
-
 	def book_room
 		render "book_room"
 	end

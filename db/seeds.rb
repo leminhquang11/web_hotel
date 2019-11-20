@@ -43,7 +43,6 @@ hotels.each do |hotel|
   hotel.hotel_images.each do |image|
     File.open.shuffle(Dir['app/assets/images/hotel/*.jpg'])
   end
-
   Room.create!([
     {
       name: "Single Room",
