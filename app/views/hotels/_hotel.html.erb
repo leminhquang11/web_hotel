@@ -1,12 +1,12 @@
 <div class="hotellist-item">
     <div class="col-xs-12 col-sm-3 no-padding hotellist-picture">
-        <%= link_to image_tag("hotel/bluesun_s_hotel.jpg", alt: "hotel", class: "img-responsive"), "#" %>
+        <%= link_to image_tag("hotel/bluesun_s_hotel.jpg", alt: "hotel", class: "img-responsive"), room_path%>
     </div>
     <div class="col-xs-12 col-sm-9 no-padding hotellist-content">
         <div class="row hotellist-info">
             <div class="col-xs-12 col-sm-8 col-md-9 hotel-name">
                 <h3>
-                    <%= link_to hotel do %>
+                    <%= link_to room_path do %>
                         <%= hotel.name %>
                         &nbsp;&nbsp;
                         <span class="fa fa-star text-yellow"></span>
@@ -20,7 +20,7 @@
                     <%= link_to "#{hotel.city} - Show on map", data: {toggle: "modal", target: "#modalLocation"} do %>
                         <span class="fa fa-map-marker"></span>
                         <span class="fa fa-location-arrow"></span> (2.5 km from center)
-                    <% end %>                    
+                    <% end %>
                 </p>
             </div>
         </div>
@@ -33,11 +33,15 @@
                 <p class="text-violet">Only 1 room left!</p>
             </div>
             <div class="col-xs-12 col-sm-4 col-md-3 hotellist-price">
-                <h2 class="text-blue text-right price-ht">USD 
+                <h2 class="text-blue text-right price-ht">USD
                 <span class="text-yellow">
                     <%= hotel.price_start %> - <%= hotel.price_end %>
                 </span></h2>
-                <%= link_to t(".delete_hotel"), hotel, method: :delete, class: "btn btn-blue btn-select-room" %>
+                <% if user_signed_in? %>
+                    <% if current_user.has_role? :admin %>
+                        <%= link_to t(".delete_hotel"), hotel, method: :delete, class: "btn btn-blue btn-select-room" %>
+                    <% end %>
+                <% end %>
             </div>
         </div>
     </div>

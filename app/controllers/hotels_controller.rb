@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i(index show)
   load_and_authorize_resource
 
   def index
@@ -70,7 +70,6 @@ class HotelsController < ApplicationController
       :luxury, :description,
       images_attributes: [:id, :image, :_destroy])
   end
-  
 	def book_room
 		render "book_room"
 	end

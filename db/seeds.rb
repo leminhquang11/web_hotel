@@ -3,11 +3,13 @@ Role.create(name: 'admin')
 
 user1 = User.create(email: 'admin@test.com',
           password: '123456',
-          password_confirmation: '123456')
+          password_confirmation: '123456',
+          name: 'Admin')
 user1.add_role(:admin)
 user2 = User.create(email: 'user@test.com',
           password: '123456',
-          password_confirmation: '123456')
+          password_confirmation: '123456',
+          name: 'Hotel Manage')
 user2.add_role(:moderator)
 
 20.times do |n|
@@ -41,4 +43,20 @@ hotels.each do |hotel|
   hotel.hotel_images.each do |image|
     File.open.shuffle(Dir['app/assets/images/hotel/*.jpg'])
   end
+  Room.create!([
+    {
+      name: "Single Room",
+      hotel_id: hotel.id,
+      size: "Single",
+      max_persons: "1",
+      description: "Amazing room"
+    },
+    {
+      name: "Sweet Love",
+      hotel_id: hotel.id,
+      size: "Double",
+      max_persons: "2",
+      description: "Amazing room"
+    },
+  ])
 end

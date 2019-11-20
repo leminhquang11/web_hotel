@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_174021) do
+ActiveRecord::Schema.define(version: 2019_11_20_022020) do
 
   create_table "hotel_images", force: :cascade do |t|
     t.integer "hotel_id"
@@ -54,6 +54,29 @@ ActiveRecord::Schema.define(version: 2019_11_15_174021) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "room_images", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_room_images_on_image_id"
+    t.index ["room_id"], name: "index_room_images_on_room_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "hotel_id"
+    t.string "size"
+    t.integer "max_persons"
+    t.string "facilities"
+    t.decimal "price", precision: 8, scale: 2
+    t.decimal "sale", precision: 3, scale: 2
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
   create_table "users", force: :cascade do |t|

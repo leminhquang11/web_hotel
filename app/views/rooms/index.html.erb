@@ -1,0 +1,15 @@
+<% provide :title, t(".hotel_rooms") %>
+<h1><%= t "Rooms" %></h1>
+<%= paginate @rooms %>
+<div class="col-xs-12 no-padding result-slht-table">
+    <table class="table table-bordered table-responsive slht-table">
+        <thead>
+            <th><%= t "Guests" %></th>
+            <th><%= t "Room_Types" %></th>
+            <th><%= t "Price_per_night" %></th>
+            <th class="slht-th-choices"><%= t "Facilities" %></th>
+        </thead>
+        <%= render @rooms %>
+    </table>
+</div>
+<%= paginate @rooms %>

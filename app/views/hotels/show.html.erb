@@ -1,4 +1,7 @@
 <% provide :title, @hotel.name %>
 <div class="container">
   <p>Name: <%= @hotel.name %></p>
+  <% @images.each do |image| %>
+    <%= image_tag image.picture_url %>
+  <% end %>
 </div>
