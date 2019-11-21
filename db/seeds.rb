@@ -28,8 +28,8 @@ end
     country: Faker::Address.country,
     city: Faker::Address.city,
     website: 'hotel#{n+1}.com}',
-    price_start: '500000',
-    price_end: '1500000',
+    price_start: '5000',
+    price_end: '15000',
     luxury: Faker::Number.between(from: 1, to: 5),
     rate_point: Faker::Number.between(from: 1, to: 5),
     description: Faker::Restaurant.description

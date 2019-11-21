@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% provide :title, t("hotels") %>
 <h1><%= t "hotels" %></h1>
 <%= paginate @hotels %>
@@ -16,10 +17,14 @@
         </form>
     </div>
 </div>
+  
+<div class="container" style="padding: 20px 0 0 0">
+	<% provide :title, t("hotels") %>
+	<h1><%= t "hotels" %></h1>
+	<%= paginate @hotels %>
+	<ul class="hotels">
+	  <%= render @hotels %>
+	</ul>
+	<%= paginate @hotels %>
+</div>
 
-<ul class="hotels">
-  <%= render "search/form" %>
-  <%= yield %>
-  <%= render @hotels %>
-</ul>
-<%= paginate @hotels %>
