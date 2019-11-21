@@ -5,21 +5,23 @@
     <div class="col-xs-12 col-sm-9 no-padding hotellist-content">
         <div class="row hotellist-info">
             <div class="col-xs-12 col-sm-8 col-md-9 hotel-name">
+                <h4><%= hotel.country%></h4>
                 <h3>
                     <%= link_to room_path do %>
                         <%= hotel.name %>
                         &nbsp;&nbsp;
+                        <%=hotel.luxury%>
+                        
                         <span class="fa fa-star text-yellow"></span>
-                        <span class="fa fa-star text-yellow"></span>
-                        <span class="fa fa-star text-yellow"></span>
-                        <span class="fa fa-star text-yellow"></span>
-                        <span class="fa fa-star text-yellow"></span>
+                        <br><br>
+                        <a>Rate point:<%= hotel.rate_point %>/5.0</a>
                     <% end %>
                 </h3>
                 <p class="">
+
                     <%= link_to "#{hotel.city} - Show on map", data: {toggle: "modal", target: "#modalLocation"} do %>
                         <span class="fa fa-map-marker"></span>
-                        <span class="fa fa-location-arrow"></span> (2.5 km from center)
+                        <span class="fa fa-location-arrow"></span>  <%=hotel.city%> : <%=hotel.address%>
                     <% end %>
                 </p>
             </div>
