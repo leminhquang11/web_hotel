@@ -33,6 +33,10 @@ gem "sass-rails", "~> 5.0"
 gem "sassc-rails", ">= 2.1.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "pg_search"
+gem "elasticsearch-model"
+gem "elasticsearch-rails"
+
 
 
 group :development, :test do

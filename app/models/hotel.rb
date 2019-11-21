@@ -6,3 +6,6 @@ class Hotel < ApplicationRecord
   accepts_nested_attributes_for :hotel_images, allow_destroy: true
   accepts_nested_attributes_for :images, allow_destroy: true
 end
+# include PgSearch
+# pg_search_scope :search_by_full_name, against: [:name, :city]
+

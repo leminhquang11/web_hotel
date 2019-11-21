@@ -5,6 +5,18 @@ class UsersController < ApplicationController
   def index
     @users = User.ordered_by_name.page params[:page]
   end
+  # def create
+  #   @users = User.new user_params
+
+  #   if @users.save
+  #     flash[:success] = t ".user_created"
+  #     # current_user.add_role :moderator, @hotel
+  #   else
+  #     flash[:notice] = t ".user_created_failed"
+  #   end
+  #   redirect_to new_user_url
+  # end
+
 
   def show
   end

@@ -18,3 +18,10 @@ class Ability
     end
   end
 end
+# class Ability include CanCan::Ability def initialize(user)
+#  can :dashboard, :all 
+#  can :access, :rails_admin 
+#  can :read, :dashboard 
+#  # to allow access, you have to put this. 
+#   end 
+# end
