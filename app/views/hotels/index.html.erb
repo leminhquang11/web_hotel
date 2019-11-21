@@ -1,7 +1,25 @@
 <% provide :title, t("hotels") %>
 <h1><%= t "hotels" %></h1>
 <%= paginate @hotels %>
+<div class="full-row form_tour_search">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <form id="tour_search_form" name="tour_search_form" method="get" action="">
+            <div class="tour_search_wrapper">
+                <div class="col-xs-12 col-sm-3 one_fourth">
+                    <label for="keyword"><%= t "Destination" %></label>
+                    <input id="keyword" class="form-control" name="keyword" type="text" placeholder="City, region or keywords">
+                </div>
+                <div class="col-xs-12 col-sm-3 one_fourth last">
+                    <input id="tour_search_btn" class="btn btn-blue" type="submit" value="Search">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <ul class="hotels">
+  <%= render "search/form" %>
+  <%= yield %>
   <%= render @hotels %>
 </ul>
 <%= paginate @hotels %>

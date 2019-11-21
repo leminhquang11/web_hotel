@@ -76,4 +76,9 @@ class HotelsController < ApplicationController
 	def pay
 		render "pay"
 	end
+  # if params[:term]
+  # @users = User.search_by_full_name(params[:term])
+  # else
+  #   @users = User.all
+  # end
 end
