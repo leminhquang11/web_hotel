@@ -1,5 +1,4 @@
 
-
 <div class="full-row form_tour_search">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <form id="tour_search_form" name="tour_search_form" method="get" action="">
@@ -16,6 +15,7 @@
     </div>
 </div>
   
+<%= render "filter", locals: { hotels: @hotels } %>
 
 <div class="container" style="padding: 20px 0 0 0">
 	<% provide :title, t("hotels") %>

@@ -1,13 +1,14 @@
 <div class="hotellist-item">
     <div class="col-xs-12 col-sm-3 no-padding hotellist-picture">
-        <%= link_to image_tag("hotel/bluesun_s_hotel.jpg", alt: "hotel", class: "img-responsive"), room_path%>
+        <%= link_to image_tag("hotel/bluesun_s_hotel.jpg", alt: "hotel", class: "img-responsive"), hotel %>
     </div>
     <div class="col-xs-12 col-sm-9 no-padding hotellist-content">
         <div class="row hotellist-info">
             <div class="col-xs-12 col-sm-8 col-md-9 hotel-name">
                 <h4><%= hotel.country%></h4>
                 <h3>
-                    <%= link_to room_path do %>
+                    
+                    <%= link_to hotel.name, hotel %>
                         <%= hotel.name %>
                         &nbsp;&nbsp;
                         <%=hotel.luxury%>
@@ -15,7 +16,7 @@
                         <span class="fa fa-star text-yellow"></span>
                         <br><br>
                         <a>Rate point:<%= hotel.rate_point %>/5.0</a>
-                    <% end %>
+                    
                 </h3>
                 <p class="">
 

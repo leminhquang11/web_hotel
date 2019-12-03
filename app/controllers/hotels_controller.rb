@@ -70,12 +70,14 @@ class HotelsController < ApplicationController
       :luxury, :description, :rate_point,
       images_attributes: [:id, :image, :_destroy])
   end
+  
 	def book_room
 		render "book_room"
 	end
 	def pay
 		render "pay"
 	end
+  
   # if params[:term]
   # @users = User.search_by_full_name(params[:term])
   # else

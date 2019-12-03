@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-sm-12 page-left filter-left-mb__overlay">
+    <div class="filter-head__overlay">
+        <h3><%= t "Filter" %></h3>
+        <span class="fa fa-close filter-head-close__overlay"></span>
+    </div>
+    <div class="filter-left">
+        <% @hotels.each do |hotel| %>
+            <filter class="box box-filter-budget">
+                <div class="filter-title">
+                    <%= link_to hotel.name, hotels_path(hotel.id) %>
+                </div>
+            </filter>
+        <% end %>
+    </div>
+    <!-- .Filter left -->
+</div>
