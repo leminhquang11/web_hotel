@@ -25,7 +25,7 @@ gem "sqlite3"
 gem "kaminari"
 gem "mini_magick"
 gem "owlcarousel-rails", "~> 2.2", ">= 2.2.3.5"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "rails", "~> 5.2.3"
 gem "rolify"
 gem "rubocop", "~> 0.55.0", require: false
