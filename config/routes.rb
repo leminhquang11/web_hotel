@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :service_bookings
   get "services_in_place/:place_id", to: "services#services_in_place", :as => :services_in_place
 
+
 end

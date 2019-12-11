@@ -6,6 +6,39 @@ class HotelsController < ApplicationController
     @hotels = kmnr_paginate_record Hotel.all,
       params[:page],
       Settings.max_hotel_per_page
+      
+  end
+  def index1
+    @hotels = kmnr_paginate_record Hotel.where(luxury: '1'),
+      params[:page],
+      Settings.max_hotel_per_page
+      
+  end
+  def index2
+    @hotels = kmnr_paginate_record Hotel.where(luxury: '2'),
+      params[:page],
+      Settings.max_hotel_per_page
+      
+  end
+  def index3
+    @hotels = kmnr_paginate_record Hotel.where(luxury: '3'),
+      params[:page],
+      Settings.max_hotel_per_page
+      
+  end
+  def index4
+    @hotels = kmnr_paginate_record Hotel.where(luxury: '4'),
+      params[:page],
+      Settings.max_hotel_per_page
+      
+  end
+  def index5
+    @hotels = kmnr_paginate_record Hotel.where(luxury: '5'),
+      params[:page],
+      Settings.max_hotel_per_page
+      
+  end
+
   end
 
   def admin_index
@@ -77,10 +110,10 @@ class HotelsController < ApplicationController
 	def pay
 		render "pay"
 	end
+
   
   # if params[:term]
   # @users = User.search_by_full_name(params[:term])
   # else
   #   @users = User.all
   # end
-end
