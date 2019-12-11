@@ -1,0 +1,13 @@
+<%= render "layouts/banner" %>
+<div class="full-row">
+  <div class="container about-home">
+      <div class="title-picture">
+          <h2><%= t "WELCOME_TO_Tripbrick" %></h2>
+          <%= link_to image_tag("pattern-title-picture.png", alt:"", class: "img-responsive bg-title-picture custom-resize-place-image") %>
+      </div>
+      <p><%= t "vietnam_unique_chapter" %></p>
+      <p><%= t "lets_begin" %></p>
+  </div>
+</div>
+<%= render "layouts/search_form" %>
+<%= render "our_destination" %>

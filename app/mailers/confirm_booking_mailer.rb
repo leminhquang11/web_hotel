@@ -1,0 +1,2 @@
+class ConfirmBookingMailer < ApplicationMailer
+end

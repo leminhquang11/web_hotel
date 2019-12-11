@@ -16,7 +16,7 @@
             </div>
             <div class="collapse navbar-collapse navbar" id="navbar-collapse-3">
                 <ul class="nav navbar-nav navbar-left">
-                    <li><%= link_to t("Hotels"), hotels_path %></li>
+                    <li><%= link_to t("Hotels"), services_path %></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="li-number">
@@ -25,9 +25,10 @@
                     <li class="header-login-register">
                       <% if user_signed_in? %>
                         <% if current_user.has_role? :admin %>
-                            <%= link_to "Users", users_manage_path %>
+                            <%= link_to "Dashboard", rails_admin_path %>
                         <% else %>
                             <%= link_to t("profile"), current_user %>
+                            <%= link_to t("My Schedules"), user_schedules_path(current_user)%>
                          <% end %>
                         <%= link_to t("logout"), destroy_user_session_path, method: :delete %>
                       <% else %>

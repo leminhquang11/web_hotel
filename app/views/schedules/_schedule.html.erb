@@ -1,0 +1,23 @@
+<div class="col-sm-4">
+    <div class="thumbnail custom-fix-size">
+      <div class="caption text-center">
+        <div class="position-relative">
+         <img src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1543939668/sharjah-united-arab-emirates-sunset-WTG20191218.jpg?itok=-4H2dY0d" class= "custom-card-image" alt="Resort at Boracay, Philippines">
+        </div>
+        <h4 id="thumbnail-label"><strong><%= link_to schedule.name, user_schedule_schedule_items_path(current_user, schedule.id)%></strong></h4>
+
+        <div class="smaller">
+           by <strong><%= schedule.user.name %></strong>
+        </div>
+
+        <div class="thumbnail-description smaller">
+          <%= schedule.description %>
+        </div>
+      </div>
+      <div class="caption card-footer text-center">
+        <ul class="list-inline">
+          <%=  date_string_for schedule.created_at %>
+        </ul>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<% provide(:title,"Rooms")%>
+<%= render "layouts/search_form" %>
+<div class="full-row page-content">
+  <div class="container no-padding">
+    <%= render "filter_hotel", locals: { categories: @categories } %>
+    <div class="col-xs-12 col-sm-9 page-right">
+      <div class="filter-result">
+        
+      <div class="container packages_home">
+
+        
+        <% @services.each do |service| %>
+          <div class="col-xs-6 col-sm-6 col-md-4 package_item" style="height: 200px; width:300px">
+            <div class="package_item_content">
+                <%= link_to image_tag(service.service_images.first.link,  class: "img-responsive", style: "height: 150px; width:250px"), service_details_path(service.id) %>
+                <div class="thumb_content fullwidth" style="height: 50px; width:250px">
+                    <div class="thumb_title">
+                        <div class="tour_country">
+                          <%= service.place.name %>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+          </div>
+        <% end %>
+        </div>
+        <%= paginate @services, theme: 'twitter-bootstrap-3' %>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,11 @@
-maximum_length_name: 50
-maximum_length_email: 255
-minimum_length_pass: 6
-gravatar_size: 80
-checked: 1
-expired_time: 2
-address: "Dai Hoc Bach Khoa Ha Noi"
-telephone: "012 34 5546"
-email_tripbricks: "info@tripbricks.com"
-max_hotel_per_page: 5
-max_image_per_page: 5
-max_room_per_page: 5
+telephone: 0123.456.789
+address: "streets ..., city"
+email_tripbrick: "tripbrick@gmail.com"
+user:
+ avatar_size: 50
+ default_avatar: "default-avatar.png"
+RAILS_ADMIN_PAGINATION: 5
+popular_places: 6
+page:
+ num_of_reviews: 5
+ num_of_services: 9

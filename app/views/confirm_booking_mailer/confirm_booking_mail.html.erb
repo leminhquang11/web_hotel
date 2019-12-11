@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Service booking successful!</h2>
+    <h4>Hi <%= @user.name %></h4>
+    <h5>Address     : <%= @booking.booking_address %></h5>
+    <h5>Service name: <%= @booking.service.name %></h5>
+    <h5>Quantity    : <%= @booking.quantity %></h5>
+    <h5>Unit price  : <%= number_to_currency @booking.unit_price %></h5>
+    <h5>Total price : <%= number_to_currency @booking.total_price %></h5>
+    <h5>Booking at  : <%= @booking.created_at %></h5>
+    <p>
+    <%=image_tag("#{@booking.generate_qr(@booking.confirm_secret_key)}", :alt => "qrcode")%> <br/>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-sm-3 page-left filter-left-mb__overlay">
+    <div class="filter-head__overlay">
+        <h3><%= t "Filter" %></h3>
+        <span class="fa fa-close filter-head-close__overlay"></span>
+    </div>
+    <div class="filter-left">
+        <% @categories.each do |category| %>
+            <filter class="box box-filter-budget">
+                <div class="filter-title">
+                    <%= link_to category.name, service_categories_path(category.id) %>
+                </div>
+            </filter>
+        <% end %>
+    </div>
+    <!-- .Filter left -->
+</div>

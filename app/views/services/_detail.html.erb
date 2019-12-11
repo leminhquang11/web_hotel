@@ -1,0 +1,83 @@
+<div class="hotellist-item hotel-detail">
+    <div class="hotel-head">
+        <div class="row hotel-name">
+            <div class="col-xs-12 col-sm-9">
+                <h3>
+                    <a href="#">
+                        <%= service.name %>
+                    </a>
+                </h3>
+
+            </div>
+        </div>
+        <!-- .hotel-name -->
+        <div class="hotel-slider">
+            <div class="row gallery-photos clearfix">
+                <div class="col-xs-12 col-sm-8 hotel-slider">
+                    <div class="row">
+                        <div class="col-sm-12" id="carousel-hotel-box">
+                            <div class="carousel slide" id="hotelCarousel">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <% @service.service_images.each_with_index do |img, i| %>
+                                        <div class="item <%= (i == 0)? 'active': '' %>" data-slide-number="<%= i %>">
+                                          <%= image_tag(img.link, class: "resize-slide", alt: "Service") %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="left carousel-control" href="#hotelCarousel" role="button" data-slide="prev">
+                                    <span class="fa fa-angle-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#hotelCarousel" role="button" data-slide="next">
+                                    <span class="fa fa-angle-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="hotel-slider-thumbs" class="col-xs-12 col-sm-4">
+                    <ul class="col-xs-12 no-padding hide-bullets">
+                         <% @service.service_images.each_with_index do |img, i| %>
+                            <li class="col-sm-3 <%= (i == 0)? 'active': '' %>" data-item-number="<%= i %>">
+                              <%=link_to image_tag(img.link,class: "resize-slide-item", alt: "Service"), "#", class: "thumbnail", id: "carousel-hotel-#{i}"  %>
+                            </li>
+                        <% end %>
+                    </ul>
+                    <div class="col-xs-12 no-padding hotellist-price">
+
+                        <h5 class="text-left text-blue"><strong>Start time:</strong>
+                            <% if service.start_time %>
+                                <%= service.start_time.strftime("%B %d, %Y") %>
+                            <% end %>
+                        </h5>
+                        <h5 class="text-left text-blue"><strong>End time:</strong>
+                            <% if service.end_time %>
+                                <%= service.end_time.strftime("%B %d, %Y") %>
+                            <% end %>
+                        </h5>
+                        <h2 class="text-left text-blue price-ht">USD <span class="text-yellow"><%= service.price %></span></h2>
+
+                    </div>
+                    <div class="col-xs-12 no-padding hotel-slide-pay">
+                        <p class="text-blue"><%= t "cards_accepted" %></p>
+                        <ul class="list-inline">
+                            <li><%= link_to image_tag("pay1.png", class: "img-responsive"), "#" %></li>
+                            <li><%= link_to image_tag("pay2.png", class: "img-responsive"), "#" %></li>
+                            <li><%= link_to image_tag("pay3.png", class: "img-responsive"), "#" %></li>
+                            <li><%= link_to image_tag("pay4.png", class: "img-responsive"), "#" %></li>
+                        </ul>
+                    </div>
+                    <div>
+                    <% if user_signed_in? %>
+                        <%= render "service_bookings/booking_form" %>
+                    <% end %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- .hotel-slider -->
+    </div>
+    <!-- .hotel-head -->
+</div>

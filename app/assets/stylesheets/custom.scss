@@ -1,3 +1,5 @@
+$fb-blue: #2851A3;
+
 .logo-web {
   margin-top: 8px;
 }
@@ -29,7 +31,10 @@
 .package_item_content {
   margin: 5px;
 }
-
+.custom-size-image{
+  width: 100%;
+  height: 250px;
+}
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -43,9 +48,9 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
-}
+// input {
+//   height: auto !important;
+// }
 
 #error_explanation {
   color: red;
@@ -78,11 +83,11 @@ input {
 .footer {
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
+  background: $fb-blue;
 }
 
 .black-header {
-  background: rgba(0, 0, 0, 0.95);
+  background: $fb-blue;
   position: relative;
   height: 70px;
 }
@@ -151,4 +156,275 @@ input {
   width: 30%;
   z-index: 1000;
   text-align: center;
+}
+
+ .thumbnail {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+   transition: 0.3s;
+   min-width: 40%;
+   border-radius: 5px;
+ }
+
+ .thumbnail-description {
+   min-height: 40px;
+ }
+
+ .thumbnail:hover {
+   cursor: pointer;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+ }
+
+.custom-card-image{
+  width: 100%;
+  height: 150px;
+}
+
+.custom-caption-text{
+  margin-top: 120px;
+}
+.custom-fix-size{
+  width: 260px; 
+  height: 350px;
+}
+
+.toast {
+    opacity: 1 !important;
+}
+
+
+.btn-grey{
+    background-color:#D8D8D8;
+	color:#FFF;
+}
+.rating-block{
+	background-color:#FAFAFA;
+	border:1px solid #EFEFEF;
+	padding:15px 15px 20px 15px;
+	border-radius:3px;
+}
+.bold{
+	font-weight:700;
+}
+.padding-bottom-7{
+	padding-bottom:7px;
+}
+
+.review-block{
+	background-color:#FAFAFA;
+	border:1px solid #EFEFEF;
+	padding:15px;
+	border-radius:3px;
+	margin-bottom:15px;
+}
+.review-block-name{
+	font-size:14px;
+	margin:10px 0;
+}
+.review-block-date{
+	font-size:12px;
+}
+.review-block-rate{
+	font-size:13px;
+	margin-bottom:15px;
+}
+.review-block-title{
+	font-size:15px;
+	font-weight:700;
+	margin-bottom:10px;
+}
+.review-block-description{
+	font-size:13px;
+}
+
+.animated {
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  transition: height 0.2s;
+}
+
+.custom-button{
+ width: 90px;
+}
+
+.review-block-used-user{
+  color: green;
+}
+
+.review-image{
+  float:left;
+}
+
+.search_service_btn{
+	background: #4885a2;
+	    background-color: $yellow - 20;
+	    border: none;
+	    width: 100%;
+	    text-align: center;
+	    text-decoration: none;
+	    padding: .6em 1.7em .6em 1.7em !important;
+	    border-radius: 25px;
+	    text-transform: uppercase !important;
+	    font-size: 14px;
+	    margin-top: 20px;
+		@include transition();
+
+		&:hover{
+			background: $yellow - 60;
+		}
+}
+.resize-logo{
+  width: 60px !important;
+  height: 60px !important;
+}
+
+// step
+.md-stepper-horizontal {
+	display:table;
+	width:100%;
+	margin:0 auto;
+	background-color:#FFFFFF;
+	box-shadow: 0 3px 8px -6px rgba(0,0,0,.50);
+}
+.md-stepper-horizontal .md-step {
+	display:table-cell;
+	position:relative;
+	padding:24px;
+}
+.md-stepper-horizontal .md-step:hover,
+.md-stepper-horizontal .md-step:active {
+	background-color:rgba(0,0,0,0.04);
+}
+.md-stepper-horizontal .md-step:active {
+	border-radius: 15% / 75%;
+}
+.md-stepper-horizontal .md-step:first-child:active {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.md-stepper-horizontal .md-step:last-child:active {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.md-stepper-horizontal .md-step:hover .md-step-circle {
+	background-color:#757575;
+}
+.md-stepper-horizontal .md-step:first-child .md-step-bar-left,
+.md-stepper-horizontal .md-step:last-child .md-step-bar-right {
+	display:none;
+}
+.md-stepper-horizontal .md-step .md-step-circle {
+	width:30px;
+	height:30px;
+	margin:0 auto;
+	background-color:#999999;
+	border-radius: 50%;
+	text-align: center;
+	line-height:30px;
+	font-size: 16px;
+	font-weight: 600;
+	color:#FFFFFF;
+}
+.md-stepper-horizontal.green .md-step.active .md-step-circle {
+	background-color:#00AE4D;
+}
+.md-stepper-horizontal.orange .md-step.active .md-step-circle {
+	background-color:#F96302;
+}
+.md-stepper-horizontal.orange .md-step.ok .md-step-circle {
+	background-color:#00AE4D;
+}
+.md-stepper-horizontal .md-step.active .md-step-circle {
+	background-color: rgb(33,150,243);
+}
+.md-stepper-horizontal .md-step.done .md-step-circle:before {
+	font-family:'FontAwesome';
+	font-weight:100;
+	content: "\f00c";
+}
+.md-stepper-horizontal .md-step.done .md-step-circle *,
+.md-stepper-horizontal .md-step.editable .md-step-circle * {
+	display:none;
+}
+.md-stepper-horizontal .md-step.editable .md-step-circle {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+.md-stepper-horizontal .md-step.editable .md-step-circle:before {
+	font-family:'FontAwesome';
+	font-weight:100;
+	content: "\f040";
+}
+.md-stepper-horizontal .md-step .md-step-title {
+	margin-top:16px;
+	font-size:16px;
+	font-weight:600;
+}
+.md-stepper-horizontal .md-step .md-step-title,
+.md-stepper-horizontal .md-step .md-step-optional {
+	text-align: center;
+	color:rgba(0,0,0,.26);
+}
+.md-stepper-horizontal .md-step.active .md-step-title {
+	font-weight: 600;
+	color:rgba(0,0,0,.87);
+}
+.md-stepper-horizontal .md-step.active.done .md-step-title,
+.md-stepper-horizontal .md-step.active.editable .md-step-title {
+	font-weight:600;
+}
+.md-stepper-horizontal .md-step .md-step-optional {
+	font-size:12px;
+}
+.md-stepper-horizontal .md-step.active .md-step-optional {
+	color:rgba(0,0,0,.54);
+}
+.md-stepper-horizontal .md-step .md-step-bar-left,
+.md-stepper-horizontal .md-step .md-step-bar-right {
+	position:absolute;
+	top:36px;
+	height:1px;
+	border-top:1px solid #DDDDDD;
+}
+.md-stepper-horizontal .md-step .md-step-bar-right {
+	right:0;
+	left:50%;
+	margin-left:20px;
+}
+.md-stepper-horizontal .md-step .md-step-bar-left {
+	left:0;
+	right:50%;
+	margin-right:20px;
+}
+// end step
+.review_listing {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 25px;
+    box-sizing: content-box;
+    box-shadow: 0 2px 4px rgba(3, 27, 78, 0.06);
+    margin-bottom: 30px;
+    margin-top:10px;
+}
+
+input[type=radio]{
+  transform:scale(1.5);
+}
+
+.success-text{
+  color: green;
+}
+
+.jumbotron{
+   margin-bottom: 0px !important; 
+}
+
+.radio-selections{
+ display:inline-block;
+}
+
+.resize-slide{
+  height: 500px !important;
+  width: 100% !important;
 }

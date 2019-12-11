@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '6da8807c0956d5b42cd4910a7be05df719a0f2c989086b8b78f62e11f549a9bae608316bb4cb2ee32c4a229d4654acecbf61dfd92247f0ebcaf7e358048b426b'
+  # config.secret_key = 'f8067ffec21cbc5d4b809032ed851220a1a5011fc1c10bcd4358eae2dd1e8e758c2f04f0a13c0695ba094f6c949601f0f1ebb293ca4b531978300ba716ba570d'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -34,7 +34,7 @@ Devise.setup do |config|
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
-  # just :email. You can configure it to use [:username, :subdomain], so for
+  # just :email. You can configure it to use [:name, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
   # parameters are used only when authenticating and not when retrieving from
   # session. If you need permissions, you should implement that in a before filter.
@@ -114,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '16a7787d76926c1612cee6346d7e467ffbdf952bd7c647947f1346058f14e479fbd6489d98286ac4c49f91f2e59a8dd71311a28ff478bdf2120596fdf3a3bcbd'
+  # config.pepper = '3c58231478628060484e62936817dc521083d7abbcaba9fc3ef692e61f4edb5010f6d7705e98535885f7f7c72ec3a3b249c337b34d74035da5d3d90270ec24ca'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -232,7 +232,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -296,4 +296,5 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], { scope: "email" }
 end

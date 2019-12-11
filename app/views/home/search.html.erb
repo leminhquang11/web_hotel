@@ -1,0 +1,80 @@
+<% if @services.nil? %>
+<div class="full-row packages_home">
+  <div class="title-row">
+    <div class="title-row-content">
+      <span class="title-row-before"></span>
+      <% if @places.count != 0 %>
+          <h2 class="text-uppercase"><a href="#">Result: <%= @places.count %></a></h2>
+      <% else %>
+          <h2 class="text-uppercase"><a href="#">Not Found</a></h2>
+      <% end %>
+      <span class="title-row-after"></span>
+      <p class="text-danger text-center title-caption">Discover our best packages in many destinations</p>
+    </div>
+  </div>
+</div>
+<div class="container packages_home">
+  <div class="package_content">
+    
+        
+    <% @places.each do |place| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 package_item">
+      <div class="package_item_content">
+          <%= link_to image_tag("packages/sapa.jpg", alt: "Sapa", class: "img-responsive"), "#" %>
+          <div class="thumb_content fullwidth">
+              <div class="thumb_title">
+                  <div class="tour_country">
+                      <%= place.name %>
+                  </div>
+                  <h3><%= place.description %></h3>
+              </div>
+              <!--<div class="thumb_meta">-->
+              <!--  <div class="tour_days">-->
+              <!--      Service Provider-->
+              <!--  </div>-->
+              <!--  <div class="tour_price">-->
+              <!--      30-->
+              <!--  </div>-->
+              <!--</div>-->
+          </div>
+      </div>
+      </div>
+    <% end %>
+      
+    
+  </div>
+</div>
+<% elsif @place.nil? %>
+
+<div class="container packages_home">
+  <div class="package_content">
+    
+        
+    <% @services.each do |services_by_place| %>
+      <% services_by_place.each do |service| %>
+        
+      
+          <div class="col-xs-6 col-sm-6 col-md-4 package_item">
+            <div class="package_item_content">
+                <%= link_to image_tag(service.service_images.first.link,  class: "img-responsive", style: "height: 300px; width:400px"), "#" %>
+                <div class="thumb_content fullwidth">
+                    <div class="thumb_title">
+                          Provider: <%= service.provider.name %>
+                        <div class="tour_country">
+                          Destination: <%= service.place.name %>
+                        </div>
+                           From: <%= service.start_time %></br>
+                           To: <%= service.end_time %>
+                    </div>
+                    
+                </div>
+            </div>
+          </div>
+      
+      <% end %>
+    <% end %>
+    
+  </div>
+</div>
+  
+<% end %>

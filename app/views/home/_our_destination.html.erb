@@ -1,0 +1,36 @@
+<div class="full-row packages_home">
+  <div class="title-row">
+    <div class="title-row-content">
+      <span class="title-row-before"></span>
+      <h2 class="text-uppercase"><a href="#">Our Popular Destination</a></h2>
+      <span class="title-row-after"></span>
+      <p class="text-danger text-center title-caption">Discover our best packages in many destinations</p>
+    </div>
+  </div>
+</div>
+
+<div class="container packages_home">
+  <div class="package_content">
+    <% @travel_places.each  do |travel_place| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 package_item">
+        <div class="package_item_content">
+          <% if travel_place.image_url %>
+            <%=link_to image_tag(travel_place.image_url,alt: "#{travel_place.name}", class: "img-responsive custom-size-image"), services_in_place_path(travel_place.id) %>
+          <% end %>
+          <div class="thumb_content fullwidth">
+                <div class="thumb_title">
+                    <div class="tour_country">
+                        <%= travel_place.name %>
+                    </div>
+                </div>
+                <div class="thumb_meta">
+                  <div class="tour_days">Service</div>
+                  <div class="tour_price"><%= travel_place.services.count %></div>
+                </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

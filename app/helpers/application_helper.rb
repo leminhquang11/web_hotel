@@ -1,6 +1,5 @@
 module ApplicationHelper
-  def full_title page_title = ""
-    base_title = t "Tripbricks"
-    page_title.blank? ? base_title : page_title + " | " + base_title
-  end
+    def date_string_for(datetime)
+        datetime.strftime("%b %e, %Y") if datetime
+    end
 end

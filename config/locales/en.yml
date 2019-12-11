@@ -94,4 +94,22 @@ en:
   confirm_my_account: "Confirm my account"
   forget_pass: "Forget your password?"
   didnt_receive_mail: "Didn't receive confirmation instructions?"
-  create_new_hotel: "Create new hotel"
+  flash:
+    danger:
+      user_not_found: "Cannot found this user!"
+      create_schedule_fail: "Create schedule fail!"
+      create_review_fail: "Create review fail!"
+    success:
+      schedule_created: "Create Schedule successful!"
+      review_created: "Create review successful!"
+
+  button:
+    create: "Create"
+    save: "Save"
+    delete: "Delete"
+    book: "Book now"
+  dialog:
+    delete_review_confirm: "Are you sure to delete this review?"
+    delete_schedule_item_confirm: "Are you sure to delete this item?"
+  label:
+    service_used_user: "used service"
