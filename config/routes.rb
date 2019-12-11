@@ -20,6 +20,11 @@ Rails.application.routes.draw do
 
     get "book_room", to: "hotels#book_room"
     get "pay", to: "hotels#pay"
+    get "1/hotels", to: "hotels#index1"
+    get "2/hotels", to: "hotels#index2"
+    get "3/hotels", to: "hotels#index3"
+    get "4/hotels", to: "hotels#index4"
+    get "5/hotels", to: "hotels#index5"
     
 
     get "search-results", to: "search_results#show_results"
