@@ -1,0 +1,13 @@
+<div class="row">
+		<div class="col-sm-7">
+			<div class="review-block">
+				<div id="list-new-reviews"></div>  
+				<% service_reviews.each do |r|%>
+					<%= render :partial => "service_reviews/review_item", :locals => {:review_item => r} %>
+				<% end %>
+				<%= paginate @service_reviews, theme: 'twitter-bootstrap-3' %>
+			</div>
+		</div>
+	</div>
+
+  

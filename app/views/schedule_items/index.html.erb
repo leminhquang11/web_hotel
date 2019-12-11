@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-2">&nbsp;</div>
+  <div class="col-md-8">
+    <div class="row space-16">&nbsp;</div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="thumbnail custom-fix-size">
+              <div class="caption text-center">
+                <div class="position-relative">
+                   <img src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1543939668/sharjah-united-arab-emirates-sunset-WTG20191218.jpg?itok=-4H2dY0d" class= "custom-card-image" alt="Resort at Boracay, Philippines">
+                </div>
+                <h4 id="thumbnail-label"><strong><%=@schedule.name%></strong></h4>
+
+                <div class="smaller">
+                   by <strong><%=@schedule.user.name%></strong>
+                </div>
+
+                <div class="smaller">
+                  <%= @schedule.description %>
+                </div>
+              </div>
+              <div class="caption card-footer text-center">
+                <ul class="list-inline">
+                  <%=  date_string_for @schedule.created_at %>
+                </ul>
+                <ul class="caption text-center">
+                  <a data-toggle="modal" data-target="#create-schedule-item-modal">
+                    <h4><i class="fas fa-plus-circle fa-2x"></i></h4>
+                  </a>
+                </ul>
+              </div>
+
+            </div>
+        </div>
+        <div class="col-sm-8 mx-auto">
+        <div id="list-new-schedule-items">
+        </div>
+        <% @schedule_items.each  do |s| %>
+          <%= render :partial => "schedule_item", :locals => {:schedule_item => s } %>
+        <% end %>
+        </div>
+  </div>
+</div>
+<div>
+<%= render :partial => "create_schedule_item" %>

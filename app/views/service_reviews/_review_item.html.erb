@@ -1,0 +1,28 @@
+<div class="row" id="review-<%= review_item.id %>">
+	<div class="col-sm-3">
+  		<%= get_avatar_for review_item.user %>
+		<div class="review-block-name"><a href="#"><%= review_item.user.name %></a></div>
+		<div class="review-block-date"><%= review_item.created_at.strftime("%B %d, %Y")%><br/><%= time_ago_in_words(review_item.created_at)%></div>
+	</div>
+	<div class="col-sm-9">
+		<% if current_user == review_item.user %>
+
+			<%= link_to service_review_path(review_item.id), method: :delete,
+                                     data: { confirm: t("dialog.delete_review_confirm"),remote: true }, style: "float: right;" do %>
+    			<i class="fas fa-trash-alt"></i> <%= t "button.delete" %>
+			<% end %>
+        <% end %>
+		<div class="review-block-title"><%= review_item.title %></div>
+		<div class="review-block-used-user">
+			<i class="fas fa-check-circle"></i>
+			<%= t "label.service_used_user"%>
+		</div>
+		<div class="review-block-description"><%= review_item.content %></div>
+		<div class="review-block-picture">
+			<% review_item.review_images.each do |img| %>
+				<%= image_tag(img.link,  class: "img-responsive review-image", style: "height: 100px; width:100px")  %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<hr/>

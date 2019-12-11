@@ -1,0 +1,24 @@
+<% provide(:title,"Rooms")%>
+<%= render "layouts/search_form" %>
+<div class="full-row page-content">
+  <div class="container no-padding">
+    <div class="col-xs-12 col-sm-12 page-right">
+      <div class="filter-result">
+        <%= render :partial => "detail", :locals => {:service => @service} %>
+        <div class="hotellist-item hotel-detail">
+            <strong><h2><%= t "DESCRIPTION" %></h2></strong>
+            <%= @service.description %>
+        </div>
+        <div class="hotellist-item hotel-detail">
+          <strong><h2><%= t "reviews" %></h2></strong>
+          <div class = "container">
+            <% if user_signed_in? %>
+               <%= render :partial => "service_reviews/create" %>
+            <% end %>
+            <%= render :partial => "service_reviews/show", :locals => {:service_reviews => @service_reviews, :service => @service} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

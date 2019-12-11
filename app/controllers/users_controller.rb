@@ -17,13 +17,9 @@ class UsersController < ApplicationController
   #   redirect_to new_user_url
   # end
 
+  # load_and_authorize_resource
 
   def show
-  end
-  def manage
-    if current_user.has_role? :admin
-      @users = User.ordered_by_name.page params[:page]
-    end
   end
 
   def destroy

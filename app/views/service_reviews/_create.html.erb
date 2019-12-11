@@ -1,0 +1,38 @@
+	<div class="row">
+	<div class="col-sm-7">
+	<div class="review-block">
+        <div class="text-right">
+            <a class="btn btn-primary" id="open-review-box">Leave a Review</a>
+        </div>
+    
+        <div class="row" id="post-review-box" style="display:none;">
+            <div class="col-md-12">
+                <%= form_for(current_user.service_reviews.build ) do |f| %>
+                    <div class="form-group animated">
+                      <%= f.hidden_field :service_id, value: @service.id %>
+                      <%= f.label :title, class: "col-form-label" %>
+                      <%= f.text_field :title, required: true, class: "form-control", cols: "50", rows: "5", placeholder: "Enter your review title here..." %>
+                      <%= f.label :content, class: "col-form-label" %>
+                      <%= f.text_area :content, required: true, class: "form-control animated", cols: "50",rows: "5" , placeholder: "Enter your review content here..." %>
+                    </div>
+                    
+                    <%= f.fields_for :Review_Images do |i| %>
+                      <div class="field">
+                        <%= i.label :review_images %><br>
+                        <%= i.file_field :review_images, multiple: true, name: "review_images[image][]", accept: "image/jpeg,image/gif,image/png", class: "upload-image" %>
+                      </div>
+                    <% end %>
+                    <div id="preview"></div>
+                    <div class="text-right">
+                        <a class="btn btn-danger" id="close-review-box">Cancel</a>
+                        <%= f.submit t("button.create"), class: "btn btn-primary custom-button" %>
+                    </div>                
+                <% end %>
+            
+            </div>
+        </div>
+    </div>
+	</div>
+</div>
+
+<%= javascript_include_tag "service_review.js" %>

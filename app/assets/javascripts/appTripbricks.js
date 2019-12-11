@@ -1,5 +1,5 @@
 //= require angular
-//= require jquery3
+//= require jquery
 
 var appTripbricks = angular.module("appTripbricks", [])
 .controller("myCtrl", ["$scope", function($scope) {

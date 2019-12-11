@@ -10,89 +10,160 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_022020) do
+ActiveRecord::Schema.define(version: 20191211132658) do
 
-  create_table "hotel_images", force: :cascade do |t|
-    t.integer "hotel_id"
-    t.integer "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["hotel_id"], name: "index_hotel_images_on_hotel_id"
-    t.index ["image_id"], name: "index_hotel_images_on_image_id"
-  end
-
-  create_table "hotels", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone_number"
-    t.string "country"
-    t.string "city"
-    t.string "state"
-    t.string "website"
-    t.decimal "price_start", precision: 8, scale: 2
-    t.decimal "price_end", precision: 8, scale: 2
-    t.integer "luxury"
-    t.string "description"
-    t.decimal "rate_point", precision: 3, scale: 1
-    t.decimal "geo_location", precision: 18, scale: 14
+  create_table "booking_statuses", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "image"
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "payment_methods", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.text     "description"
+    t.string   "address"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "review_images", force: :cascade do |t|
+    t.string   "link"
+    t.integer  "service_review_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["service_review_id"], name: "index_review_images_on_service_review_id"
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.string "resource_type"
-    t.integer "resource_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "resource_type"
+    t.integer  "resource_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
-  create_table "room_images", force: :cascade do |t|
-    t.integer "room_id"
-    t.integer "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_room_images_on_image_id"
-    t.index ["room_id"], name: "index_room_images_on_room_id"
+  create_table "schedule_item_images", force: :cascade do |t|
+    t.string   "link"
+    t.integer  "schedule_item_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["schedule_item_id"], name: "index_schedule_item_images_on_schedule_item_id"
   end
 
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.integer "hotel_id"
-    t.string "size"
-    t.integer "max_persons"
-    t.string "facilities"
-    t.decimal "price", precision: 8, scale: 2
-    t.decimal "sale", precision: 3, scale: 2
-    t.string "description"
+  create_table "schedule_items", force: :cascade do |t|
+    t.text     "description"
+    t.text     "option"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "schedule_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_schedule_items_on_category_id"
+    t.index ["schedule_id"], name: "index_schedule_items_on_schedule_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
+  end
+
+  create_table "service_bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "service_id"
+    t.string   "booking_user"
+    t.text     "booking_address"
+    t.integer  "quantity"
+    t.float    "unit_price"
+    t.float    "total_price"
+    t.text     "confirm_secret_key"
+    t.integer  "payment_method_id"
+    t.integer  "booking_status_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["booking_status_id"], name: "index_service_bookings_on_booking_status_id"
+    t.index ["payment_method_id"], name: "index_service_bookings_on_payment_method_id"
+    t.index ["service_id"], name: "index_service_bookings_on_service_id"
+    t.index ["user_id"], name: "index_service_bookings_on_user_id"
+  end
+
+  create_table "service_images", force: :cascade do |t|
+    t.string   "link"
+    t.integer  "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
+    t.index ["service_id"], name: "index_service_images_on_service_id"
+  end
+
+  create_table "service_reviews", force: :cascade do |t|
+    t.text     "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_service_reviews_on_service_id"
+    t.index ["user_id"], name: "index_service_reviews_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "option"
+    t.float    "price"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "provider_id"
+    t.integer  "category_id"
+    t.integer  "place_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_services_on_category_id"
+    t.index ["place_id"], name: "index_services_on_place_id"
+    t.index ["provider_id"], name: "index_services_on_provider_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "avatar"
+    t.string   "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

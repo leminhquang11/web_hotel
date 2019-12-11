@@ -1,0 +1,130 @@
+<% provide(:title,"Rooms")%>
+<body style="background: #eef3f7">
+  <div class="row">
+    <div class="md-stepper-horizontal orange">
+      <div class="md-step active">
+        <div class="md-step-circle"><span>1</span></div>
+        <div class="md-step-title">User information</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step">
+        <div class="md-step-circle"><span>2</span></div>
+        <div class="md-step-title">Payment details</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step">
+        <div class="md-step-circle"><span>3</span></div>
+        <div class="md-step-title">Service Booked confirm</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" >
+      <div class="col-md-8">
+        <%= form_for(current_user.service_bookings.build ) do |f| %>
+          <div class="review_listing">
+            <h3>1. Billing Address</h3>
+            <hr>
+            <%= f.label :booking_user, class: "col-form-label" do%>
+            <i class="fa fa-address-card-o"></i> Booking user name(*)
+            <% end %>
+            <%= f.text_field :booking_user, required: true, placeholder: "Full name" %>
+            
+            <%= f.label :booking_user, class: "col-form-label" do %>
+             <i class="fa fa-address-card-o"></i> Address
+            <% end %>
+            <%= f.text_field :booking_address, required: true, placeholder: "House number, Street, City,..." %>
+            
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :booking_status_id, value: 1 %>
+            <%= f.hidden_field :quantity, value: @jcart['quantity'] %>
+            <%= f.hidden_field :service_id, value: @jcart['service']['id'] %>
+            <%= f.hidden_field :unit_price, value: @jcart['unit_price'] %>
+            <%= f.hidden_field :total_price, value: @jcart['total_price'] %>
+    		  </div>     
+          <div class=" review_listing">
+          <h3>2. Payment</h3>
+          <hr>
+             <div class="radio-selections">
+           
+            
+           <% @payment_methods.each do |option| %>
+              <%= f.radio_button :payment_method_id, "#{option.id}" %><%= f.label :payment_method_id, value: "#{option.name}" %>
+            <% end %>
+          </div>
+          <p>You can use Paypal to pay</p>
+          <%= link_to image_tag("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BxA5RfMz5ZnCLJw_1S7-iWYNlt6aJfYolVCR-sVOAEtxg_1ayg&s",width: "100px", height: "50px"), service_payment_path(:jcart => @jcart) %></a>
+        </div>
+        <%= f.submit "Checkout",{class: "btn btn-success"} %>
+        <% end %>
+  		</div>
+  		<div class="col-md-4  cart-items">
+        <div class=" review_listing" style="display: flex">
+          <a href="">
+            <% @service.service_images.each_with_index do |img, i| %>
+            <% if(i == 0) %>
+              <%=link_to image_tag(img.link, width: "100", height: "130"), "#", width: "100px"  %>
+            <% end %>
+            <% end %>
+            </a>
+          <div style="margin-left: 10px">
+            <h4><b><%= @service.name %></b></h4>
+            <p>Provider: <%= @service.provider.name %></p>
+            <p>Start time: <% if @service.start_time %>
+                                <%= @service.start_time.strftime("%B %d, %Y") %>
+                            <% end %></p>
+            <p>End time: <% if @service.end_time %>
+                            <%= @service.end_time.strftime("%B %d, %Y") %>
+                        <% end %></p>
+          </div>
+        </div>  
+        
+        <div class=" review_listing">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Unit Price</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><b><%=number_to_currency @jcart['unit_price'] %></b></h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Quantity</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><b><%=@jcart['quantity']%></b></h4>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Discount</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><b>$0</b></h4>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Total price</h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: #00becc"><b><%= number_to_currency @jcart['total_price'] %></b></h4>
+            </div>
+          </div>   
+          <div class="row">
+            <div class="col-md-12">
+              <p style="opacity: 0.5"><b>Included:</b> service 10%, tax 10%</p>
+            </div>
+          </div>
+        </div>          
+  		</div>
+    </div>
+  </div>
+</body>

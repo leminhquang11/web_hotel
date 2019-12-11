@@ -1,0 +1,15 @@
+<%= form_tag new_service_booking_path,method: :get do |f|%>
+<%= hidden_field_tag :service_id, @service.id %>
+<h3 class="text-yellow"><b><%=number_to_currency @service.price %></b></h3>
+<%= select_tag :quantity, options_for_select(1..15),:id => "quantity_selection" %>
+<h3 class="text-yellow"><b>$<span id ="total_price"><%= @service.price %></span></b></h3>
+<%=submit_tag "book",{ class: "btn btn-blue btn-reserve", style: "float:right;"} %>    
+<% end %>
+<script>
+$("#quantity_selection").on("change", function() {
+  var service_price = <%= @service.price %>
+  total_price = this.value * service_price
+  total_price = total_price.toFixed(2)
+  $("#total_price").html(total_price);
+});
+</script>

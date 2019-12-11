@@ -1,0 +1,3 @@
+$("#list-new-schedule-items").append("<%= escape_javascript(render :partial => 'schedule_item', :locals => {:schedule_item => @schedule_item}) %>");
+$("#create-schedule-item-modal").modal("hide");
+toastr.success("Create Schedule Item successful!");

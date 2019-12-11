@@ -1,0 +1,162 @@
+<% provide(:title,"Rooms")%>
+<body style="background: #eef3f7">
+  <div class="row">
+    <div class="md-stepper-horizontal orange">
+      <div class="md-step ok">
+        <div class="md-step-circle"><span>1</span></div>
+        <div class="md-step-title">User information</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step active">
+        <div class="md-step-circle"><span>2</span></div>
+        <div class="md-step-title">Payment details</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+      <div class="md-step">
+        <div class="md-step-circle"><span>3</span></div>
+        <div class="md-step-title">Service Booked confirm</div>
+        <div class="md-step-bar-left"></div>
+        <div class="md-step-bar-right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" >
+        <div class="col-md-8">
+            <div class=" review_listing">
+                <h3>Pay by Paypal</h3>
+                <hr>
+                <div class="well confident-message m-t-1 m-b-0">
+                    <ul class="list-default m-b-0" data-bind="foreach: messageItemList()">
+                        <li data-bind="html: $data.text, css: $data.className" class="chosen-to-pay-by">You have choosed <strong>PayPal</strong> and need to leave website TripBricks then access <strong>PayPal</strong> to finish this transaction.&nbsp;</li>
+                        <li data-bind="html: $data.text, css: $data.className" class="note-that-choosing-to-pay-by">Total price you need to pay: <strong><%= number_to_currency(@jcart['total_price']) %></strong></li>
+                    </ul>
+                </div>
+                <p class="agoda-terms-and-conditions">To continue, i agreed with terms of use <a data-element-name="general-term-on-step2-link" href="//www.agoda.com/vi-vn/info/agoda-termsofuse.html" target="_blank"> of TripBricks</a> and agreed with their<a data-element-name="privacy-policy-on-step2-link" href="//www.agoda.com/vi-vn/info/agoda-privacy.html" target="_blank">Privacy Policy</a>.</p>
+                <hr>
+                <div id="paypal-button"></div>
+                  <%= form_for(current_user.service_bookings.build,:html => {:id => "form"} ) do |f| %>
+                    <%= f.hidden_field :booking_user, value: "vu huy khoi" %>
+                    <%= f.hidden_field :booking_address, value: "hanoi, vietnam" %>
+                    <%= f.hidden_field :user_id , value: current_user.id %>
+                    <%= f.hidden_field :booking_status_id, value: 1 %>
+                    <%= f.hidden_field :quantity, value: @jcart['quantity'] %>
+                    <%= f.hidden_field :service_id, value: @jcart['service']['id'] %>
+                    <%= f.hidden_field :unit_price, value: @jcart['unit_price'] %>
+                    <%= f.hidden_field :total_price, value: @jcart['total_price'] %>
+                    <%= f.hidden_field :payment_method_id, value: 2 %>
+                    <%= f.submit "", :id => 'Submit', :style => "display: none;" %>
+                  <% end %>
+                <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+                <script>
+                  paypal.Button.render({
+                    // Configure environment
+                    env: 'sandbox',
+                    client: {
+                      sandbox: 'demo_sandbox_client_id',
+                      production: 'demo_production_client_id'
+                    },
+                    // Customize button (optional)
+                    locale: 'en_US',
+                    style: {
+                      size: 'small',
+                      color: 'gold',
+                      shape: 'pill',
+                    },
+                
+                    // Enable Pay Now checkout flow (optional)
+                    commit: true,
+                
+                    // Set up a payment
+                    payment: function(data, actions) {
+                      return actions.payment.create({
+                        transactions: [{
+                          amount: {
+                            total: '<%= @jcart['total_price'] %>',
+                            currency: 'USD'
+                          }
+                        }]
+                      });
+                    },
+                    // Execute the payment
+                    onAuthorize: function(data, actions) {
+                      return actions.payment.execute().then(function() {
+                        // Show a confirmation message to the buyer
+                        toastr.success('Thank you for your purchase!');
+                        //window.location.href = "/services/<%= @service.id %>/confirm"
+                        $("#form").submit();
+                      });
+                    }
+                  }, '#paypal-button');
+                
+                </script>
+
+            </div>
+            <a href="/services/<%= @service.id %>/book" type="button" class="btn btn-default active">Turn back to payment details</a>
+        </div>
+  		<div class="col-md-4">
+        <div class=" review_listing" style="display: flex">
+          <a href="">
+            <% @service.service_images.each_with_index do |img, i| %>
+            <% if(i == 0) %>
+              <%=link_to image_tag(img.link, width: "100", height: "130"), "#", width: "100px"  %>
+            <% end %>
+            <% end %></a>
+          <div style="margin-left: 10px">
+            <h4><b><%= @service.name %></b></h4>
+            <p>Provider: <%= @service.provider.name %></p>
+            <p>Start time: <% if @service.start_time %>
+                                <%= @service.start_time.strftime("%B %d, %Y") %>
+                            <% end %></p>
+            <p>End time: <% if @service.end_time %>
+                            <%= @service.end_time.strftime("%B %d, %Y") %>
+                        <% end %></p>
+          </div>
+        </div>  
+        <div class=" review_listing">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Unit Price</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><b><%=number_to_currency @jcart['unit_price'] %></b></h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Quantity</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><b><%=@jcart['quantity']%></b></h4>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Discount</h4>
+            </div>
+            <div class="col-md-6">
+              <h4><b>$0</b></h4>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Total price</h4>
+            </div>
+            <div class="col-md-6">
+              <h4 style="color: #00becc"><b><%= number_to_currency @jcart['total_price'] %></b></h4>
+            </div>
+          </div>   
+          <div class="row">
+            <div class="col-md-12">
+              <p style="opacity: 0.5"><b>Included:</b> service 10%, tax 10%</p>
+            </div>
+          </div>
+        </div>       
+  		</div>
+    </div>
+  </div>
+</body>
