@@ -1,5 +1,5 @@
 Project WEBSITE ĐẶT PHÒNG KHÁCH SẠN (BTL môn lập trình web)
-
+```sh
 I.Cài đặt môi trường
     "rails", "~> 5.0.7", ">= 5.0.7.2"
      ruby 2.5.5
@@ -35,3 +35,4 @@ III.Các chức năng của trang web
         - Qản lý khách sạn
         - Quản lý các phòng
         - Quản lý đặt phòng
+```
