@@ -62,9 +62,9 @@ GEM
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.0.1)
     cancancan (3.0.1)
@@ -345,7 +345,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap-glyphicons
   bootstrap-kaminari-views
-  bootstrap-sass (= 3.3.7)
+  bootstrap-sass (= 3.4.1)
   byebug
   cancancan
   carrierwave
