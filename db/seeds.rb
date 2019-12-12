@@ -75,8 +75,8 @@ end
 
 Category.create!([
 	{id:1,
-		name: "Hotel",
-		description: "Hotel",
+		name: "Single Room",
+		description: "Single Room",
 	},
 
 	# {id:2,
@@ -130,13 +130,6 @@ providers.each do |provider|
 	                end
                 end
 			when 2
-				places.each do |place|
-					service = Service.create!(name: Faker::Educator.course_name, description: Faker::Restaurant.description, option:"",provider_id:provider.id,category_id:category.id, place_id: place.id,price: price_rand(100,1000));
-					(1..11).to_a.shuffle.take(2).each do |i|
-			        	ServiceImage.create! link: "https://res.cloudinary.com/hedspi/image/upload/v1564448966/travel-discovery/food/#{i}.jpg",
-			                       service_id: service.id
-	                end
-	            end
 			when 3
 			when 4
 		end
