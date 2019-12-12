@@ -4,9 +4,11 @@
     <aside class="col-md-4">
       <section class="user_info">
         <h1>
-          <%= gravatar_for current_user %>
+          <%= get_avatar_for(@user) %>
           <%= current_user.name %>
           <%=current_user.email%>
+          <%= button_to "Edit Profile", edit_user_registration_path,
+                  :class => "btn btn-outline-primary my-2", :method => :get %>
         </h1>
       </section>
     </aside>
