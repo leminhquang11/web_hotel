@@ -35,5 +35,3 @@ III.Các chức năng của trang web
         - Qản lý khách sạn
         - Quản lý các phòng
         - Quản lý đặt phòng
-
-
