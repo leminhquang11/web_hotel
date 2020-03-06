@@ -32,7 +32,7 @@ gem "devise"
 gem "config"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-glyphicons"
-gem "bootstrap-sass", "3.3.7"
+gem "bootstrap-sass", "3.4.1"
 gem "font-awesome-sass"
 gem "owlcarousel-rails", "~> 2.2", ">= 2.2.3.5"
 gem "jquery-rails"
